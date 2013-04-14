@@ -1,23 +1,72 @@
+@import 'bootstrap';
+	body{
+		padding-top: 60px;
+	}
+@import 'bootstrap-responsive';
+
+/* mixin, variables, ecc. */
+
 $navbarBackgroundHighlight: white;
 $navbarBackground: white;
 $btnPrimaryBackground: purple;
+$grayMediumLight: #eaeaea;
 
-@import 'bootstrap';
-body{
-    padding-top: 60px;
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
-@import 'bootstrap-responsive';
+/* Universal */
+
+.center {
+	text-align: center;
+	h1 {
+		margin-bottom: 10px;
+	}
+}
+
+
+/* navbar */
 
 .navbar-inner{
     @include box-shadow(none !important);
     border: 0;
 }
 
-.footer{
-    margin-top: 50px;
-    color: $grayLight;
-    a{
-        color: $gray;
-    }
+
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid $grayMediumLight;
+	color: $grayLight;
+	a {
+		color: $gray;
+	&:hover {
+		color: $grayDarker;
+		}
+	}
+	small {
+		float: left;
+	}
+	ul {
+		float: right;
+		list-style: none;
+		li {
+			float: left;
+			margin-left: 10px;
+		}
+	}
+}
+
+/* miscellaneous */
+
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	@include box_sizing;
 }

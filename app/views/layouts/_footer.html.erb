@@ -1,6 +1,12 @@
-<div class="footer">
+<footer class="footer">
   <small>
-    <%= link_to "Yourl", "https://github.com/alessandroprioni/yourl" %>
-    by <%= link_to "Alessandro Prioni", "http://twitter.com/ale_prioni" %>
+    <%= link_to "Yourl", "https://github.com/alessandroprioni/yourl", target: "_blank" %>
+    by <%= link_to "Alessandro Prioni", "http://twitter.com/ale_prioni", target: "_blank" %>
   </small>
-</div>
+  <nav>
+  	<ul>
+  		<li><small><%= link_to "Home", root_path %></small></li>
+  		<li><small><%= link_to "About", about_path %></small></li>
+  	</ul>
+  </nav>
+</footer>
