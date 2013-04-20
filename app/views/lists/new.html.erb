@@ -1,0 +1,12 @@
+<h1 class="center">New list</h1>
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@list) do |f| %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+		<%= f.submit "Create list", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

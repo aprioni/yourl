@@ -1,0 +1,5 @@
+<% current_user.lists.each do |list| %>
+<ul>
+<li><%= list.title %><br/><small><%= list.description %></small></li>
+</ul>
+<%end%>

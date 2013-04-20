@@ -1,15 +1,16 @@
-<% if @user.errors.any? %>
-	<% user_errors_messages = @user.errors.full_messages %>
-	<% errors_number = @user.errors.count %>
-	<% user_errors_messages.delete_at(0) && errors_number -= 1 if user_errors_messages[0] == "Password digest can't be blank" %>
-		<div class="error-explanation alert alert-error">
-			<p>
-				The form contains <%= pluralize(errors_number, "error") %>:
-			</p>
+<% if object.errors.any? %>
+	<% errors_messages = object.errors.full_messages %>
+	<% errors_number = object.errors.count %>
+	<% errors_messages.delete_at(0) && errors_number -= 1 if errors_messages[0] == "Password digest can't be blank" %>
+	
+	<div id="error explanation">
+		<div class="alert alert-error">
+			<p>The form contains <%= pluralize(errors_number, "error") %>:</p>
 			<ul>
-			<% user_errors_messages.each do |msg| %>
-				<li><%= msg %></li>
-			<% end %>
+				<% errors_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
 			</ul>
 		</div>
+	</div>
 <% end %>
