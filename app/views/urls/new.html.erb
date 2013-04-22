@@ -1,0 +1,18 @@
+<h1 class="center">New Url</h1>
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_for(@url) do |f| %>
+				<%= render "shared/error_messages", object: f.object %>
+
+		<%= f.label :select_a_list %>
+		<%= f.collection_select(:list_id, current_user.lists, :id, :title) %>
+		<%= f.label :url %>
+		<%= f.text_field :url %>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+		<%= f.submit "Create list", class: "btn btn-large btn-primary" %>
+		<% end %>
+	</div>
+</div>

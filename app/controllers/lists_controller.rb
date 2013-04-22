@@ -12,7 +12,7 @@ class ListsController < ApplicationController
 		@list = current_user.lists.build(params[:list])
 		if @list.save
 			flash[:success] = "List created!"
-			
+			redirect_to lists_path			
 		else
 			render 'new'
 		end
